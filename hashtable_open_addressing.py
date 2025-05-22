@@ -11,8 +11,8 @@ class HashTable:
         return hash(key) % self.size
       
     def _rehash(self, old_location: int) -> int:
-		""" Compute and returns the next location for linear probing """
-   		pass
+	""" Compute and returns the next location for linear probing """
+   	pass
 
     def setitem(self, key: str, value: dict) -> None:
         """

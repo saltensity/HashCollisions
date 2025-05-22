@@ -1,6 +1,6 @@
 ## Hash Table (Collision Resolution) Practice
 
-In the last session, we saw that a Hash Table is implemented with a **fixed-size array**.
+In the last session, we implemented a **Hash Table**, the backbone of which is the **hash function**.
 
 An **ideal hash function** gives a **unique location for each key**. **However**, since the number of possible keys is much larger than the number of locations, **some keys** will inevitably **hash to the same index location**. When this happens, it is called a **hash collision**.
 
