@@ -19,13 +19,13 @@ class HashTable:
         """
         Sets the value associated with the key in the Hash Table.
         """
-        i = self._hash(key)
+        location = self._hash(key)
         for _ in range(self.size):
-          if self.values[i] is None:
-            self.values[i] = (key, value)
+          if self.values[location] is None or self.values[location][0] == key:
+            self.values[location] = (key, value)
             return
           
-          i = self._rehash(i)
+          location = self._rehash(location)
         
         raise Exception("Table is full!")
 
@@ -33,12 +33,12 @@ class HashTable:
         """
         Gets the value associated with the key in the Hash Table.
         """
-        i = self._hash(key)
+        location = self._hash(key)
         for _ in range(self.size):
-          if self.values[i] is not None and self.values[i][0] == key:
-            return self.values[i][1]
+          if self.values[location] is not None and self.values[location][0] == key:
+            return self.values[location][1]
           
-          i = self._rehash(i)
+          location = self._rehash(location)
         
         raise KeyError()
     
@@ -46,12 +46,12 @@ class HashTable:
         """
         Deletes the matching key-value pair in the Hash Table.
         """
-        i = self._hash(key)
+        location = self._hash(key)
         for _ in range(self.size):
-          if self.values[i] is not None and self.values[i][0] == key:
-            self.values[i] = None
+          if self.values[location] is not None and self.values[location][0] == key:
+            self.values[location] = None
             return
           
-          i = self._rehash(i)
+          location = self._rehash(location)
         
         raise KeyError()

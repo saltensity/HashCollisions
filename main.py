@@ -27,6 +27,7 @@ if __name__ == "__main__":
       print(ht.getitem(id))
     
     ht.delitem('s0002b')
+    print('---- Expected: KeyError raised since s0002b is deleted. -----')
     print(ht.getitem('s0002b'))
     
     # Test your hashtable using appropriate methods
